@@ -36,6 +36,8 @@ gem 'devise'
 gem 'grape'
 gem 'grape-rabl'
 
+gem 'bootstrap_sb_admin_base_v2'
+
 group :development, :test do
   gem 'grape-swagger'
   gem 'grape-swagger-rails'
