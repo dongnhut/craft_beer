@@ -36,6 +36,7 @@ gem 'devise'
 gem 'grape'
 gem 'grape-rabl'
 
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_sb_admin_base_v2'
 
 group :development, :test do

@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
 
-  resources :beers
-  resources :categories
+
   # devise_for :users
   # mount CoreAPI => '/'
   # mount GrapeSwaggerRails::Engine => '/swagger'
+  
+  scope :admin do
+    root 'dashboards#index'
+    devise_for :users
+    resources :users
+    resources :beers
+    resources :categories
+  end  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
