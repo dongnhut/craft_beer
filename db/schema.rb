@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20160408090225) do
     t.datetime "updated_at",                 null: false
   end
 
+  add_index "beers", ["category_id"], name: "index_beers_on_category_id", using: :btree
+
   create_table "categories", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
