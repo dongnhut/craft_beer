@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
 
   # devise_for :users
-  # mount CoreAPI => '/'
-  # mount GrapeSwaggerRails::Engine => '/swagger'
+  mount CoreAPI => '/'
+  mount GrapeSwaggerRails::Engine => '/swagger'
   
   scope :admin do
     root 'dashboards#index'

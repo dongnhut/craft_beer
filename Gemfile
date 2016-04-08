@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'grape'
 gem 'grape-rabl'
+gem 'yajl-ruby', require: 'yajl'
 
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
