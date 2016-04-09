@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160409083910) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "api_keys", force: :cascade do |t|
     t.string   "access_token",                null: false
     t.integer  "customer_id"
@@ -22,8 +25,8 @@ ActiveRecord::Schema.define(version: 20160409083910) do
     t.datetime "updated_at",                  null: false
   end
 
-  add_index "api_keys", ["access_token"], name: "index_api_keys_on_access_token", unique: true
-  add_index "api_keys", ["customer_id"], name: "index_api_keys_on_customer_id"
+  add_index "api_keys", ["access_token"], name: "index_api_keys_on_access_token", unique: true, using: :btree
+  add_index "api_keys", ["customer_id"], name: "index_api_keys_on_customer_id", using: :btree
 
   create_table "beers", force: :cascade do |t|
     t.string   "name"
@@ -36,7 +39,7 @@ ActiveRecord::Schema.define(version: 20160409083910) do
     t.datetime "updated_at",   null: false
   end
 
-  add_index "beers", ["category_id"], name: "index_beers_on_category_id"
+  add_index "beers", ["category_id"], name: "index_beers_on_category_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -71,7 +74,7 @@ ActiveRecord::Schema.define(version: 20160409083910) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
