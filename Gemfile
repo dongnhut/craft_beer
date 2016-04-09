@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'grape'
 gem 'grape-rabl'
+gem 'grape-kaminari'
 gem 'yajl-ruby', require: 'yajl'
 
 gem 'kaminari'

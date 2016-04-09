@@ -21,7 +21,7 @@ class CoreAPI < Grape::API
                                 # terms_of_service_url: "http://helloreverb.com/terms/",
                                 title: "CraftBeer"
                              },
-                             markdown: GrapeSwagger::Markdown::KramdownAdapter,
+                             markdown: false,
                              hide_documentation_path: true,
                              hide_format: true,
                              include_base_url: true
