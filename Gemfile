@@ -43,6 +43,8 @@ gem 'bootstrap-kaminari-views'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_sb_admin_base_v2'
+gem "font-awesome-rails"
+
 
 # gem 'rails_12factor'
 
