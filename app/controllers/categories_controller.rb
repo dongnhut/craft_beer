@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   def show
     respond_to do |format|
-      format.json { render :show, status: :created, location: @category }
+      format.js
     end
   end
 

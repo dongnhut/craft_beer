@@ -9,6 +9,9 @@ class BeersController < ApplicationController
 
   # GET /beers/1
   def show
+    respond_to do |format|
+      format.js
+    end
   end
 
   # GET /beers/new

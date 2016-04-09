@@ -34,7 +34,7 @@
                                 <td><%= beer.country %></td>
                                 <td><%= beer.price %></td>
                                 <td>
-                                  <%= link_to 'Show', beer %> |
+                                  <%= link_to "Show", beer, :class => "", :remote => true, "data-toggle" => "modal", "data-target" => "#myModal" %> |
                                   <%= link_to 'Edit', edit_beer_path(beer) %> |
                                   <%= link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' } %>
                                 </td>
@@ -54,6 +54,8 @@
     </div>
 </div>
 
-<div class="pull-right">
-  <%= link_to 'New Beer', new_beer_path, class: "btn btn-default" %>
+<div id="category-modal">
+    <%= render "modal_show" %>
 </div>
+
+<%= link_to 'New Beer', new_beer_path, class: "btn btn-default" %>
