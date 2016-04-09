@@ -46,11 +46,11 @@ gem 'bootstrap_sb_admin_base_v2'
 
 gem 'rails_12factor'
 
-group :development, :test do
-  gem 'grape-swagger'
-  gem 'grape-swagger-rails'
-  gem 'kramdown'
-  
+gem 'grape-swagger'
+gem 'grape-swagger-rails'
+# gem 'kramdown'
+
+group :development, :test do  
   gem 'rails-erd'
   gem 'pry-rails'
   gem 'pry-byebug'
