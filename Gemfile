@@ -44,6 +44,8 @@ gem 'bootstrap-kaminari-views'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_sb_admin_base_v2'
 
+gem 'rails_12factor'
+
 group :development, :test do
   gem 'grape-swagger'
   gem 'grape-swagger-rails'
