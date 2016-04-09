@@ -15,10 +15,7 @@ class CoreAPI < Grape::API
                              api_version: "v1",
                              info: {
                                 contact: "vodongnhut@gmail.com",
-                                description: %Q(Description area),
-                                # license: "Apache 2.0",
-                                # license_url: "http://www.apache.org/licenses/LICENSE-2.0.html",
-                                # terms_of_service_url: "http://helloreverb.com/terms/",
+                                description: %Q(This is the mini project which nhutvd code for test the technology skill),
                                 title: "CraftBeer"
                              },
                              markdown: false,

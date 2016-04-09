@@ -1,2 +1,2 @@
 object @customer
-  attributes :id, :email
+  attributes :id,:name, :email, :address

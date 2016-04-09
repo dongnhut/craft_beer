@@ -17,8 +17,9 @@
                         <thead>
                             <tr>
                                 <th class="col-lg-1 text-center" >#</th>
-                                <th class="col-lg-3 text-center">Name</th>
-                                <th class="col-lg-6 text-center">Description</th>
+                                <th class="col-lg-2 text-center">Name</th>
+                                <th class="col-lg-3 text-center">Email</th>
+                                <th class="col-lg-4 text-center">Address</th>
                                 <th class="col-lg-2 text-center">Action</th>
                             </tr>
                         </thead>
@@ -27,8 +28,9 @@
                           <% @users.each do |user| %>
                             <tr>
                                 <td><%= user.id %></td>
-                                <td><%= user.name %></td>
-                                <td><%= truncate user.description, length: 160 %></td>
+                                <td><%= user.try(:name) %></td>
+                                <td><%= user.try(:email) %></td>
+                                <td><%= truncate user.try(:address), length: 160 %></td>
                                 <td>
                                   <%= link_to 'Show', user %> |
                                   <%= link_to 'Edit', edit_user_path(user) %> |
