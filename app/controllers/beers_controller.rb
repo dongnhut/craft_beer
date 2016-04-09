@@ -22,7 +22,6 @@ class BeersController < ApplicationController
 
   # POST /beers
   def create
-    binding.pry
     @beer = Beer.new(beer_params)
     if @beer.save
       redirect_to beers_url, notice: 'Beer was successfully created.'

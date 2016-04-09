@@ -12,7 +12,7 @@ module Authorizable
         unless token && !token.expired?
           false
         else
-          @user = User.find(token.user_id)
+          @customer = Customer.find(token.customer_id)
         end
       end
     end

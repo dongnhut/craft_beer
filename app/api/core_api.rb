@@ -7,8 +7,8 @@ class CoreAPI < Grape::API
   formatter :json, Grape::Formatter::Rabl
 
   mount V1::CategoriesAPI
-  # mount V1::UserAPI
-  # mount V1::AuthAPI
+  mount V1::CustomerAPI
+  mount V1::AuthAPI
 
   # Docs
   add_swagger_documentation  mount_path: "/api-docs",

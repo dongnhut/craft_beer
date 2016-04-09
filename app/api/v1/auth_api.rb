@@ -18,7 +18,7 @@ module V1
           "Access-Token" => { description: "Access-Token", required: true }
         }
       }
-      get "/logout", rabl: "users/show" do
+      get "/logout", rabl: "customers/show" do
         ActiveRecord::Base.transaction do
           @auth = Auth.logout(current_user)
         end

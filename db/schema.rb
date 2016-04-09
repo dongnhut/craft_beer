@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160408101116) do
+ActiveRecord::Schema.define(version: 20160409083910) do
+
+  create_table "api_keys", force: :cascade do |t|
+    t.string   "access_token", limit: 255,                null: false
+    t.integer  "customer_id",  limit: 4
+    t.boolean  "active",                   default: true, null: false
+    t.datetime "expires_at"
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+  end
+
+  add_index "api_keys", ["access_token"], name: "index_api_keys_on_access_token", unique: true, using: :btree
+  add_index "api_keys", ["customer_id"], name: "index_api_keys_on_customer_id", using: :btree
 
   create_table "beers", force: :cascade do |t|
     t.string   "name",         limit: 255
@@ -33,9 +45,11 @@ ActiveRecord::Schema.define(version: 20160408101116) do
     t.datetime "updated_at",                null: false
   end
 
-  create_table "dashboards", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "customers", force: :cascade do |t|
+    t.string   "email",              limit: 255, default: "", null: false
+    t.string   "encrypted_password", limit: 255, default: "", null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
 
   create_table "users", force: :cascade do |t|

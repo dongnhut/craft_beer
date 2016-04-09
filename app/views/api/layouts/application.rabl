@@ -1,7 +1,6 @@
 node(:meta) { 
-    #response.status
     {
-        status: "successfully",
+        status: "success",
         code: 200
     }
   }
