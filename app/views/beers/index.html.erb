@@ -1,25 +1,59 @@
-<p id="notice"><%= notice %></p>
+<h1 class="page-header"> Listing Beers</h1>
 
-<h1>Listing Beers</h1>
+<% if notice %>
+  <div class="alert alert-success"><%= notice %></div>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Table
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th class="col-lg-1 text-center" >#</th>
+                                <th class="col-lg-2 text-center">Name</th>
+                                <th class="col-lg-2 text-center">Manufacturer</th>
+                                <th class="col-lg-2 text-center">Country</th>
+                                <th class="col-lg-2 text-center">Price</th>
+                                <th class="col-lg-2 text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tbody>
+                          <% @beers.each do |beer| %>
+                            <tr>
+                                <td><%= beer.id %></td>
+                                <td><%= beer.name %></td>
+                                <td><%= beer.manufacturer %></td>
+                                <td><%= beer.country %></td>
+                                <td><%= beer.price %></td>
+                                <td>
+                                  <%= link_to 'Show', beer %> |
+                                  <%= link_to 'Edit', edit_beer_path(beer) %> |
+                                  <%= link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' } %>
+                                </td>
+                            </tr>
+                          <% end %>
+                        </tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.table-responsive -->
+                <%= paginate @beers %>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+</div>
 
-  <tbody>
-    <% @beers.each do |beer| %>
-      <tr>
-        <td><%= link_to 'Show', beer %></td>
-        <td><%= link_to 'Edit', edit_beer_path(beer) %></td>
-        <td><%= link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Beer', new_beer_path %>
+<div class="pull-right">
+  <%= link_to 'New Beer', new_beer_path, class: "btn btn-default" %>
+</div>

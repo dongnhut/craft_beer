@@ -8,6 +8,9 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1
   def show
+    respond_to do |format|
+      format.json { render :show, status: :created, location: @category }
+    end
   end
 
   # GET /categories/new
@@ -21,15 +24,21 @@ class CategoriesController < ApplicationController
 
   # POST /categories
   def create
-    binding.pry
     @category = Category.new(category_params)
-    redirect_to categories_url, notice: 'Category was successfully created.' if @category.save
-    # redirect_to new_category_path
+    if @category.save
+      redirect_to categories_url, notice: 'Category was successfully created.'
+    else
+      render :new
+    end
   end
 
   # PATCH/PUT /categories/1
   def update
-    redirect_to @category, notice: 'Category was successfully updated.' if @category.update(category_params)
+    if @category.update(category_params)
+      redirect_to @category, notice: 'Category was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   # DELETE /categories/1
