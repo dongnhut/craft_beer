@@ -1,0 +1,28 @@
+-
+  id: 1
+  name: Wheat Ales
+  description: EASY DRINKING / REFRESHING / CITRUSY
+-
+  id: 2
+  name: Pub Cream Ales
+  description: LIGHT / TOASTED / CREAMY
+-
+  id: 3
+  name: Scottish Ales
+  description: SMOKY / MALTY / FLORAL
+-
+  id: 4
+  name: White Ales
+  description: ORANGE / CITRUS / CORIANDER
+-
+  id: 5
+  name: Saisons
+  description: CARBONATED / FRUITY / SPICY
+-
+  id: 6
+  name: Blonde Ales
+  description: SWEET / SPICY / EFFERVESCENT
+-
+  id: 7
+  name: Amber & Red Ales
+  description: MALTY / BALANCED / CARAMEL
