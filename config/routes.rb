@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
 
 
-  # devise_for :users
   mount CoreAPI => '/'
   mount GrapeSwaggerRails::Engine => '/swagger'
   
   scope :admin do
     root 'dashboards#index'
-    devise_for :users
+    devise_for :users, controllers: { sessions: 'users/sessions'}
     resources :users
     resources :beers
     resources :categories
