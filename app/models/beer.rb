@@ -1,6 +1,8 @@
 class Beer < ActiveRecord::Base
   paginates_per 10
 
+  acts_as_paranoid
+
   belongs_to :category
 
   validates :name, presence: true

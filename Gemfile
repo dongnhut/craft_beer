@@ -33,6 +33,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
+gem "paranoia"
+
 gem 'grape'
 gem 'grape-rabl'
 gem 'grape-kaminari'
@@ -46,7 +48,7 @@ gem 'bootstrap_sb_admin_base_v2'
 gem "font-awesome-rails"
 
 
-# gem 'rails_12factor'
+gem 'rails_12factor'
 
 gem 'grape-swagger'
 gem 'grape-swagger-rails'
