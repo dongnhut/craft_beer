@@ -32,7 +32,7 @@
                                 <td><%= user.try(:email) %></td>
                                 <td><%= truncate user.try(:address), length: 160 %></td>
                                 <td>
-                                  <%= link_to 'Show', user %> |
+                                  <%= link_to "Show", user, :class => "", :remote => true, "data-toggle" => "modal", "data-target" => "#myModal" %> |
                                   <%= link_to 'Edit', edit_user_path(user) %> |
                                   <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
                                 </td>
@@ -50,6 +50,10 @@
         </div>
         <!-- /.panel -->
     </div>
+</div>
+
+<div id="category-modal">
+    <%= render "modal_show" %>
 </div>
 
 <%= link_to 'New User', new_user_path, class: "btn btn-default"%>

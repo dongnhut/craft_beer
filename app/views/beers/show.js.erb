@@ -1,2 +1,7 @@
 $("#category-modal .modal-title").html("<%= @beer.name %>");
+$("#category-modal .modal-body #country").html("<%= @beer.country %>");
+$("#category-modal .modal-body #manufacturer").html("<%= @beer.manufacturer %>");
+$("#category-modal .modal-body #price").html("<%= @beer.price %>");
+$("#category-modal .modal-body #category").html("<%= @beer.category.name %>");
+$("#category-modal .modal-body #description").html("<%= @beer.description %>");
 
