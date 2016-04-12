@@ -7,6 +7,8 @@ module V1
         # requires :action, type: Symbol, values: [:PAUSE, :RESUME, :STOP], documentation: { param_type: 'query' }
         requires :email, type: String
         requires :password, type: String
+        requires :name, type: String
+        requires :address, type: String
       end
       post "/register", rabl: "customers/show" do
         ActiveRecord::Base.transaction do

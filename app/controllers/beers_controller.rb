@@ -1,6 +1,6 @@
 class BeersController < ApplicationController
   before_action :set_beer, only: [:show, :edit, :update, :destroy]
-  before_action :get_categories, only: [:new, :edit]
+  before_action :get_categories, only: [:new, :edit, :create, :update]
 
   # GET /beers
   def index

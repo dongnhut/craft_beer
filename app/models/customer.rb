@@ -10,7 +10,9 @@ class Customer < ActiveRecord::Base
 
   has_one :api_key
 
-  validates :email, presence: true
+  validates :password, presence: true
+  validates :name, presence: true
+  validates :address, presence: true
   validates :email,
     format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }, 
     presence: true, uniqueness: true
@@ -23,7 +25,7 @@ class Customer < ActiveRecord::Base
   private
   
   def self.permit_create_customer(params)
-      params.permit(:email, :password)
+      params.permit(:email, :password, :name, :address)
   end
   
 end

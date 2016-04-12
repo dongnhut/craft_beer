@@ -52,6 +52,7 @@ gem 'rails_12factor'
 gem 'grape-swagger'
 gem 'grape-swagger-rails'
 # gem 'kramdown'
+# 
 
 group :development, :test do  
   gem 'rails-erd'
@@ -60,7 +61,12 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
-  gem "factory_girl_rails", require: false
+
+  gem 'airborne'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'ffaker'
+  gem 'shoulda-matchers'
+  gem "factory_girl_rails"
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
