@@ -7,6 +7,7 @@ class CoreAPI < Grape::API
   formatter :json, Grape::Formatter::Rabl
 
   mount V1::CategoriesAPI
+  mount V1::BeersAPI
   mount V1::CustomerAPI
   mount V1::AuthAPI
 
