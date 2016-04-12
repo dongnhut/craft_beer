@@ -53,6 +53,7 @@ gem 'grape-swagger'
 gem 'grape-swagger-rails'
 # gem 'kramdown'
 # 
+gem 'ffaker'
 
 group :development, :test do  
   gem 'rails-erd'
@@ -64,7 +65,6 @@ group :development, :test do
 
   gem 'airborne'
   gem 'rspec-rails', '~> 3.0'
-  gem 'ffaker'
   gem 'shoulda-matchers'
   gem "factory_girl_rails"
 
