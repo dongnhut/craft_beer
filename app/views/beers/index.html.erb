@@ -32,7 +32,7 @@
                                 <td><%= beer.name %></td>
                                 <td><%= beer.manufacturer %></td>
                                 <td><%= beer.country %></td>
-                                <td><%= beer.price %></td>
+                                <td><%= beer.price ? number_to_currency(beer.price, :precision => 2) : number_to_currency(0) %></td>
                                 <td>
                                   <%= link_to "Show", beer, :class => "", :remote => true, "data-toggle" => "modal", "data-target" => "#myModal" %> |
                                   <%= link_to 'Edit', edit_beer_path(beer) %> |
