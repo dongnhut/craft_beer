@@ -26,27 +26,16 @@
                         </thead>
                         <tbody>
                         <tbody>
-                          <% @beers.each do |beer| %>
-                            <tr>
-                                <td><%= beer.id %></td>
-                                <td><%= beer.name %></td>
-                                <td><%= beer.manufacturer %></td>
-                                <td><%= beer.country %></td>
-                                <td><%= beer.price ? number_to_currency(beer.price, :precision => 2) : number_to_currency(0) %></td>
-                                <td>
-                                  <%= link_to "Show", beer, :class => "", :remote => true, "data-toggle" => "modal", "data-target" => "#myModal" %> |
-                                  <%= link_to 'Edit', edit_beer_path(beer) %> |
-                                  <%= link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' } %>
-                                </td>
-                            </tr>
-                          <% end %>
+                          <%= render partial: "beer", collection: @beers %>
                         </tbody>
                             
                         </tbody>
                     </table>
                 </div>
                 <!-- /.table-responsive -->
-                <%= paginate @beers %>
+                <div class="text-center">
+                    <%= paginate @beers %>
+                </div>
             </div>
             <!-- /.panel-body -->
         </div>
