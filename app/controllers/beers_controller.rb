@@ -4,7 +4,7 @@ class BeersController < ApplicationController
 
   # GET /beers
   def index
-    @beers = Beer.page params[:page]
+    @beers = Beer.order(id: :desc).page params[:page]
   end
 
   # GET /beers/1

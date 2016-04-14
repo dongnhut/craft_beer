@@ -6,9 +6,10 @@ class Beer < ActiveRecord::Base
   belongs_to :category
 
   validates :name, presence: true
+  validates :category_id, presence: true
   validates :manufacturer, presence: true
   validates :country, presence: true
-  validates :price, presence: true
+  validates :price, presence: true, format: { :with => /\A\d+(?:\.\d{0,2})?\z/ }, numericality: {:greater_than => 0}
   validates :description, presence: true
 
   scope :beers_of_category, ->(category_id) { where(category_id: category_id) }

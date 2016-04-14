@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories
   def index
-    @categories = Category.page params[:page]
+    @categories = Category.order(id: :desc).page params[:page]
   end
 
   # GET /categories/1
