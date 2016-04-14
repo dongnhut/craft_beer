@@ -8,7 +8,10 @@ Rails.application.routes.draw do
     root 'dashboards#index'
     devise_for :users, controllers: { sessions: 'users/sessions'}
     resources :users
-    resources :beers
+    resources :beers do
+      put 'archive', on: :member
+      put 'unarchive', on: :member
+    end
     resources :categories
   end  
   

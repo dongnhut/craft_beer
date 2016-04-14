@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160410135153) do
+ActiveRecord::Schema.define(version: 20160414044244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,9 +35,10 @@ ActiveRecord::Schema.define(version: 20160410135153) do
     t.string   "country"
     t.float    "price"
     t.text     "description"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.datetime "deleted_at"
+    t.integer  "archive_status", default: 0
   end
 
   add_index "beers", ["category_id"], name: "index_beers_on_category_id", using: :btree

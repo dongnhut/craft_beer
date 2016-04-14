@@ -1,5 +1,5 @@
 class BeersController < ApplicationController
-  before_action :set_beer, only: [:show, :edit, :update, :destroy]
+  before_action :set_beer, only: [:show, :edit, :update, :destroy, :archive, :unarchive]
   before_action :get_categories, only: [:new, :edit, :create, :update]
 
   # GET /beers
@@ -46,6 +46,24 @@ class BeersController < ApplicationController
   def destroy
     @beer.destroy
     redirect_to beers_url, notice: 'Beer was successfully destroyed.'
+  end
+
+  #PUT beers/1/archive
+  def archive
+    if @beer.update(archive_status: 1)
+      redirect_to :back, notice: 'Beer was successfully archived.' 
+    else
+      redirect_to beers_url, notice: 'Beer was not successfully archived.' 
+    end
+  end
+
+   #PUT beers/1/unarchive
+  def unarchive
+    if @beer.update(archive_status: 0)
+      redirect_to :back, notice: 'Beer was successfully unarchived.' 
+    else
+      redirect_to beers_url, notice: 'Beer was not successfully unarchived.' 
+    end
   end
 
   private

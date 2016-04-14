@@ -13,4 +13,6 @@ class Beer < ActiveRecord::Base
   validates :description, presence: true
 
   scope :beers_of_category, ->(category_id) { where(category_id: category_id) }
+  scope :archived, ->{ where( archive_status: 1) }
+  scope :unarchived, ->{ where( archive_status: 0) }
 end

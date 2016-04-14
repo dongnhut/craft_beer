@@ -11,7 +11,7 @@ module V1
         requires :category_id, type: Integer
       end
       get "/", rabl: "beers/index" do
-        @beers = Beer.beers_of_category(params[:category_id]).page(params[:page]).per(params[:per_page])
+        @beers = Beer.unarchived.beers_of_category(params[:category_id]).page(params[:page]).per(params[:per_page])
         fail ResourceNotFound unless @beers.present?
         @beers
       end
