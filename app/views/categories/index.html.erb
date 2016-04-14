@@ -23,17 +23,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <tbody>
                           <%= render partial: "category", collection: @categories %>
-                        </tbody>
-                            
                         </tbody>
                     </table>
                 </div>
                 <!-- /.table-responsive -->
-                <div class="text-center">
-                    <%= paginate @categories %>
-                </div>
             </div>
             <!-- /.panel-body -->
         </div>
@@ -45,4 +39,13 @@
     <%= render "modal_show" %>
 </div>
 
-<%= link_to 'New Category', new_category_path, class: "btn btn-default" %>
+<div class="row">
+    <div class="pull-left">
+        <div class="text-center">
+            <%= paginate @categories %>
+        </div>
+    </div>
+    <div class="pull-right pagination">
+        <%= link_to 'New Category', new_category_path, class: "btn btn-default" %>
+    </div>
+</div>
