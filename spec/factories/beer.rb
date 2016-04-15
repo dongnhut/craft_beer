@@ -1,15 +1,19 @@
 
 require 'ffaker'
 
-FactoryGirl.define do
+FactoryGirl.define do |f|
 
-  factory :beer do
-    name {FFaker::Name.name}
-    category_id {rand(1..Category.count)}
-    manufacturer {FFaker::Company.name}
-    country {FFaker::Address.country}
-    price {rand(11.2...76.9)}
-    description {FFaker::Lorem.paragraphs}
+
+  factory :beer do |f|
+    
+    f.association  :category
+    f.name {FFaker::Name.name}
+    f.manufacturer {FFaker::Company.name}
+    f.country {FFaker::Address.country}
+    f.price {rand(11...76)}
+    f.description {FFaker::Lorem.paragraphs}
+    f.archive_status {rand(0...1)}
+
   end
 
 end

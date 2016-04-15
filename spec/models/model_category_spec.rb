@@ -23,6 +23,11 @@ RSpec.describe Category, :type => :model do
     it 'should has_many beers' do
       should have_many(:beers)
     end
+
+    it 'should has_many unarchived_beers' do
+      should have_many(:unarchived_beers)
+    end
+
   end
   
 end

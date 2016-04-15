@@ -47,6 +47,22 @@ RSpec.describe "routing to admin/beers", :type => :routing do
     )
   end
 
+  it "routes /admin/beers/:id/archive to beers#archive" do
+    expect(:put => "/admin/beers/1/archive").to route_to(
+      :controller => "beers",
+      :action => "archive",
+      :id => '1'
+    )
+  end
+
+  it "routes /admin/beers/:id/unarchive to beers#unarchive" do
+    expect(:put => "/admin/beers/1/unarchive").to route_to(
+      :controller => "beers",
+      :action => "unarchive",
+      :id => '1'
+    )
+  end
+
   it "routes /admin/beers/:id to beers#destroy" do
     expect(:delete => "/admin/beers/1").to route_to(
       :controller => "beers",
