@@ -1,0 +1,31 @@
+#myModal.modal.fade aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" style=("display: none;") tabindex="-1"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+        h4#myModalLabel.modal-title
+      .modal-body
+        table
+          tbody
+            tr
+              td
+                strong Category: 
+              td#category
+            tr
+              td
+                strong Country: 
+              td#country
+            tr
+              td
+                strong Manufacturer: 
+              td#manufacturer
+            tr
+              td
+                strong Price: 
+              td#price
+            tr
+              td colspan="3"
+                strong Description:
+                p#description
+      .modal-footer
+        button.btn.btn-default data-dismiss="modal" type="button"  Close

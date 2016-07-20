@@ -1,0 +1,26 @@
+h1.page-header Listing Categories
+- if notice
+  .alert.alert-success= notice
+.row
+  .col-lg-12
+    .panel.panel-default
+      .panel-heading Table
+      .panel-body
+        .table-responsive
+          table.table.table-striped.table-bordered.table-hover
+            thead
+              tr
+                th.col-lg-1.text-center #
+                th.col-lg-3.text-center Name
+                th.col-lg-6.text-center Description
+                th.col-lg-2.text-center Action
+            tbody
+              = render partial: "category", collection: @categories
+#category-modal
+  = render "modal_show"
+.row
+  .pull-left
+    .text-center
+      = paginate @categories
+  .pull-right.pagination
+    = link_to 'New Category', new_category_path, class: "btn btn-default"

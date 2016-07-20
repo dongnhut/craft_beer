@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 ##### Database #####
@@ -33,7 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
-gem "paranoia"
+gem 'paranoia'
 
 gem 'grape'
 gem 'grape-rabl'
@@ -41,21 +40,22 @@ gem 'grape-kaminari'
 gem 'yajl-ruby', require: 'yajl'
 
 gem 'kaminari'
-gem 'bootstrap-kaminari-views'
 
+gem 'slim-rails'
+gem 'bootstrap-kaminari-views'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_sb_admin_base_v2'
-
 
 gem 'rails_12factor'
 
 gem 'grape-swagger'
 gem 'grape-swagger-rails'
 # gem 'kramdown'
-# 
+#
 gem 'ffaker'
+gem 'rubocop'
 
-group :development, :test do  
+group :development, :test do
   gem 'rails-erd'
   gem 'pry-rails'
   gem 'pry-byebug'
@@ -66,7 +66,7 @@ group :development, :test do
   gem 'airborne'
   gem 'rspec-rails', '~> 3.0'
   gem 'shoulda-matchers'
-  gem "factory_girl_rails"
+  gem 'factory_girl_rails'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -79,4 +79,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

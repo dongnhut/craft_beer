@@ -1,0 +1,67 @@
+h1.page-header Dashboard
+- if notice
+  .alert.alert-success 
+    = notice
+.row
+  .col-lg-3.col-md-6
+    .panel.panel-primary
+      .panel-heading
+        .row
+          .col-xs-3
+            i.fa.fa-comments.fa-5x
+          .col-xs-9.text-right
+            .huge 
+              = @members
+            div Admin Members
+      = link_to users_path do
+        .panel-footer
+          span.pull-left View Details
+          span.pull-right
+            i.fa.fa-arrow-circle-right
+          .clearfix
+  .col-lg-3.col-md-6
+    .panel.panel-green
+      .panel-heading
+        .row
+          .col-xs-3
+            i.fa.fa-tasks.fa-5x
+          .col-xs-9.text-right
+            .huge= @categories
+            div Categories
+      = link_to categories_path do
+        .panel-footer
+          span.pull-left View Details
+          span.pull-right
+            i.fa.fa-arrow-circle-right
+          .clearfix
+  .col-lg-3.col-md-6
+    .panel.panel-yellow
+      .panel-heading
+        .row
+          .col-xs-3
+            i.fa.fa-shopping-cart.fa-5x
+          .col-xs-9.text-right
+            .huge= @beers
+            div Beers
+      = link_to beers_path do
+        .panel-footer
+          span.pull-left View Details
+          span.pull-right
+            i.fa.fa-arrow-circle-right
+          .clearfix
+  .col-lg-3.col-md-6
+    .panel.panel-red
+      .panel-heading
+        .row
+          .col-xs-3
+            i.fa.fa-support.fa-5x
+          .col-xs-9.text-right
+            .huge= @customers
+            div Customers
+      a href="#"
+        .panel-footer
+          span.pull-left View Details
+          span.pull-right
+            i.fa.fa-arrow-circle-right
+          .clearfix
+/! /.row

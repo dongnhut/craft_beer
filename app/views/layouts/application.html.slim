@@ -1,0 +1,36 @@
+doctype html
+html lang="en"
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
+    meta charset="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    meta content="" name="description"
+    meta content="nhutvd" name="author"
+    title Craft Beer
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    #wrapper
+      /! Navigation
+      nav.navbar.navbar-default.navbar-static-top role="navigation" style=("margin-bottom: 0")
+        .navbar-header
+          button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button"
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          = link_to "Craft Beer", root_path, class: 'navbar-brand'
+        /! /.navbar-header
+        = render 'shares/header'
+        /! /.navbar-top-links
+        = render 'shares/sidebar'
+      /! Page Content
+      #page-wrapper
+        .container-fluid
+          /! /.row
+          = yield
+        /! /.container-fluid
+      /! /#page-wrapper
+    /! /#wrapper
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true

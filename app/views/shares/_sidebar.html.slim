@@ -1,0 +1,31 @@
+.navbar-default.sidebar role="navigation"
+  .sidebar-nav.navbar-collapse
+    ul#side-menu.nav
+      li.sidebar-search
+        .input-group.custom-search-form
+          input.form-control placeholder="Search..." type="text" /
+          span.input-group-btn
+            button.btn.btn-default type="button"
+              i.fa.fa-search
+        /! /input-group
+      li
+        = link_to categories_path do
+          i.fa.fa-table.fa-fw
+          | Categories
+      li
+        = link_to beers_path do
+          i.fa.fa-edit.fa-fw
+          | Beers
+      li
+        a href="#"
+          i.fa.fa-bar-chart-o.fa-fw
+          | Admin Members
+          span.fa.arrow
+        ul.nav.nav-second-level
+          li
+            = link_to "List", users_path
+          li
+            = link_to "Add new", new_user_path
+        /! /.nav-second-level
+  /! /.sidebar-collapse
+/! /.navbar-static-side

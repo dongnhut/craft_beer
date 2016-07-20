@@ -1,0 +1,22 @@
+tr
+  td
+    = beer.id
+  td
+    = beer.name
+  td
+    = beer.manufacturer
+  td
+    = beer.country
+  td
+    = beer.price ? number_to_currency(beer.price, :precision => 2) : number_to_currency(0)
+  td
+    = link_to "Show", beer, :class => "", :remote => true, "data-toggle" => "modal", "data-target" => "#myModal"
+    |  |
+    = link_to 'Edit', edit_beer_path(beer)
+    |  |
+    - if beer.archive_status == 1
+      = link_to 'Unarchive', unarchive_beer_path(beer), method: :put, data: { confirm: 'Are you sure, you wanna unarchive this beer?' }
+    - else
+      = link_to 'Archive', archive_beer_path(beer), method: :put, data: { confirm: 'Are you sure, you wanna archive this beer?' }
+    |  |
+    = link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' }

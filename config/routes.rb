@@ -1,25 +1,28 @@
 Rails.application.routes.draw do
-
-
   mount CoreAPI => '/'
   mount GrapeSwaggerRails::Engine => '/swagger'
-  
+
   scope :admin do
     root 'dashboards#index'
-    devise_for :users, controllers: { sessions: 'users/sessions'}
+    devise_for :users, controllers: {
+      sessions: 'users/sessions',
+      passwords: 'users/passwords',
+      registrations: 'users/registrations',
+      confirmations: 'users/confirmations'
+    }
     resources :users
     resources :beers do
       put 'archive', on: :member
       put 'unarchive', on: :member
     end
     resources :categories
-  end  
-  
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  get '/',  to: redirect('/swagger')
+  get '/', to: redirect('/swagger')
   # root '/swagger'
 
   # Example of regular route:

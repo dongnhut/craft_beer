@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   def index
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
-    #to do for generate pass and send mail
+    # to do for generate pass and send mail
     if @user.save
       redirect_to users_url, notice: 'Member was successfully created.'
     else
@@ -49,14 +49,15 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      permited_params = params.require(:user).permit(:name, :email, :address)
-      permited_params.merge!(password: '12345678')
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def user
+    @user = User.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    permited_params = params.require(:user).permit(:name, :email, :address)
+    permited_params.merge!(password: '12345678')
+  end
 end

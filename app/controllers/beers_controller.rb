@@ -1,6 +1,6 @@
 class BeersController < ApplicationController
-  before_action :set_beer, only: [:show, :edit, :update, :destroy, :archive, :unarchive]
-  before_action :get_categories, only: [:new, :edit, :create, :update]
+  before_action :beer, only: [:show, :edit, :update, :destroy, :archive, :unarchive]
+  before_action :categories, only: [:new, :edit, :create, :update]
 
   # GET /beers
   def index
@@ -36,7 +36,7 @@ class BeersController < ApplicationController
   # PATCH/PUT /beers/1
   def update
     if @beer.update(beer_params)
-      redirect_to beers_url, notice: 'Beer was successfully updated.' 
+      redirect_to beers_url, notice: 'Beer was successfully updated.'
     else
       render :edit
     end
@@ -48,37 +48,38 @@ class BeersController < ApplicationController
     redirect_to beers_url, notice: 'Beer was successfully destroyed.'
   end
 
-  #PUT beers/1/archive
+  # PUT beers/1/archive
   def archive
     if @beer.update(archive_status: 1)
-      redirect_to :back, notice: 'Beer was successfully archived.' 
+      redirect_to :back, notice: 'Beer was successfully archived.'
     else
-      redirect_to beers_url, notice: 'Beer was not successfully archived.' 
+      redirect_to beers_url, notice: 'Beer was not successfully archived.'
     end
   end
 
-   #PUT beers/1/unarchive
+  # PUT beers/1/unarchive
   def unarchive
     if @beer.update(archive_status: 0)
-      redirect_to :back, notice: 'Beer was successfully unarchived.' 
+      redirect_to :back, notice: 'Beer was successfully unarchived.'
     else
-      redirect_to beers_url, notice: 'Beer was not successfully unarchived.' 
+      redirect_to beers_url, notice: 'Beer was not successfully unarchived.'
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_beer
-      @beer = Beer.includes(:category).find(params[:id])
-    end
 
-    def get_categories
-      @categories = Category.pluck(:name, :id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def beer
+    @beer = Beer.includes(:category).find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def beer_params
-      permited_params = params.require(:beer).permit(:name, :manufacturer, :country, :price, :description)
-      permited_params.merge!(category: Category.find_by(id: params[:beer][:category_id]))
-    end
+  def categories
+    @categories = Category.pluck(:name, :id)
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def beer_params
+    permited_params = params.require(:beer).permit(:name, :manufacturer, :country, :price, :description)
+    permited_params.merge!(category: Category.find_by(id: params[:beer][:category_id]))
+  end
 end
