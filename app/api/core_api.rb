@@ -16,7 +16,7 @@ class CoreAPI < Grape::API
                              api_version: 'v1',
                              info: {
                                contact: 'vodongnhut@gmail.com',
-                               description: %(This is the mini project which nhutvd code for test the technology skill),
+                               description: %(This is the mini project which nhutvd code for review the technology skill),
                                title: 'CraftBeer'
                              },
                              markdown: false,
