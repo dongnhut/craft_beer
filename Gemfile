@@ -40,9 +40,9 @@ gem 'grape-kaminari'
 gem 'yajl-ruby', require: 'yajl'
 
 gem 'kaminari'
-
 gem 'slim-rails'
 gem 'bootstrap-kaminari-views'
+
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_sb_admin_base_v2'
 

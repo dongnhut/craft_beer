@@ -23,6 +23,6 @@ h1.page-header Listing Admin Members
 .row
   .pull-left
     .text-center
-      = paginate @users
+      = paginate @users, :theme => 'twitter-bootstrap-3'
   .pull-right.pagination
     = link_to 'New User', new_user_path, class: "btn btn-default"
